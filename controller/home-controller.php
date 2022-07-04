@@ -3,7 +3,7 @@ require('../data/data.php');
 
 
 try{
-	$rss = recupXML($array['mobil']);
+	$rss = recupXML($array['mobile']);
 	$animes = $rss->channel->item;
 }catch(Exception $e){
     echo $e->getMessage();

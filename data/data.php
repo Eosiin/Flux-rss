@@ -1,6 +1,6 @@
 <?php
 $array = [
-    'mobil' => 'https://www.jeuxactu.com/rss/mobile.rss',
+    'mobile' => 'https://www.jeuxactu.com/rss/mobile.rss',
     'pc' => 'https://www.jeuxactu.com/rss/pc.rss',
     'wii'=> 'https://www.jeuxactu.com/rss/wii-u.rss',
     'switch'=> 'https://www.jeuxactu.com/rss/switch.rss',
