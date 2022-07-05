@@ -34,7 +34,7 @@
             <?php } else { ?>
               <a class="nav-link text-light btn" href="logout.php">Deconnexion</a>
             <?php } ?>
-            
+
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -44,5 +44,10 @@
       </div>
     </div>
   </nav>
+  <div class="row foto">
+    <div class="col-12 ">
+      <h1 class="text-light text-center mt-5 p-5">Le Trésor des jeux vidéos</h1>
+    </div>
+  </div>
 
   <div>

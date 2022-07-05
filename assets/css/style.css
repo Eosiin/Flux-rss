@@ -14,3 +14,9 @@
 .slides{
     width: 50%;
 }
+.foto {
+    background: url("../img/photo_titre.png") no-repeat;
+    height: 30rem;
+    background-size: cover;
+    background-position: center;
+}

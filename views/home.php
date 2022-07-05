@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once '../controller/home-controller.php';
 include("../inc/header.php");
-?>
 
+?>
 <?php
 if (isset($rss)) {
     // on configure le temps en FR
