@@ -1,9 +1,9 @@
 <?php
 session_start();
-var_dump($_COOKIE['myView']);
-var_dump($_COOKIE['myCheckbox0']);
-var_dump($_COOKIE['myCheckbox1']);
-var_dump($_COOKIE['myCheckbox2']);
+// var_dump($_COOKIE['myView']);
+// var_dump($_COOKIE['myCheckbox0']);
+// var_dump($_COOKIE['myCheckbox1']);
+// var_dump($_COOKIE['myCheckbox2']);
 require_once '../controller/settings-controller.php';
 ?>
 <?php include '../inc/header.php' ?>

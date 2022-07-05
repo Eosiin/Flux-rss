@@ -188,7 +188,7 @@ if (isset($rss)) {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body border border-dark text-center">
-                        <a href="<?= $rss['mobile'][$i]->link ?>" class="text-dark">Vers la page</a>
+                        <a href="<?= $rss['wii'][$i]->link ?>" class="text-dark">Vers la page</a>
                     </div>
                     <div class="modal-footer border border-dark">
                         <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
