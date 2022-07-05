@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once '../controller/home-controller.php';
 include("../inc/header.php");
+
 ?>
 
 <?php
@@ -16,8 +18,8 @@ if (isset($animes)) {
                     <?php if (isset($animes[0]->enclosure['url']) && $animes[0]->enclosure['url'] != "") { ?>
                         <img src="<?= $animes[0]->enclosure['url'] ?>" alt="" width="200">
                     <?php } ?>
-                    </a>
-                    <a href="<?= $animes[0]->link ?>" target=" _blank" class="">
+                </a>
+                <a href="<?= $animes[0]->link ?>" target=" _blank" class="">
                     <span class="titre"><?= $animes[0]->title ?></span>
                     <!-- <span class="date"><?= strftime($date_format, strtotime($animes[0]->pubDate)) ?></span> -->
                 </a>
