@@ -93,7 +93,7 @@ if (isset($rss)) {
 
 <div class="row justify-content-evenly">
     <!-- Début Card -->
-    <div class="card col-lg-3 col-12  border border-dark">
+    <div class="card col-lg-3 col-12 p-0  border border-dark">
         <img src="../assets/img/photo_titre.png" class="card-img-top" alt="photo_titre">
         <div class="card-body ">
             <div class="card-title text-center fw-bold fs-4">Flux</div>
@@ -125,7 +125,7 @@ if (isset($rss)) {
     </div>
 <!-- Fin Modal -->
 <!-- Début Card -->
-<div class="card col-lg-3 col-12 d-lg-block d-none border border-dark">
+<div class="card col-lg-3 col-12 p-0 border border-dark">
         <img src="../assets/img/photo_titre.png" class="card-img-top" alt="photo_titre">
         <div class="card-body ">
             <div class="card-title text-center fw-bold fs-4">Flux</div>
@@ -156,7 +156,7 @@ if (isset($rss)) {
         </div>
     </div>
     <!-- Début Card -->
-    <div class="card col-lg-3 col-12 border border-dark ">
+    <div class="card col-lg-3 col-12 p-0 border border-dark ">
         <img src="../assets/img/photo_titre.png" class="card-img-top" alt="photo_titre">
         <div class="card-body ">
             <div class="card-title text-center fw-bold fs-4">Flux</div>
