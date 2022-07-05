@@ -3,8 +3,18 @@ require('../data/data.php');
 
 
 try{
-	$rss = recupXML($array['mobile']);
-	$animes = $rss->channel->item;
+	$mobile = recupXML($array['mobile']);
+    $pc = recupXML($array['pc']);
+    $ps5 = recupXML($array['PS5']);
+    $wii = recupXML($array['wii']);
+    $switch = recupXML($array['switch']);
+    $rss = [
+        'mobile' => $mobile->channel->item,
+        'pc'=> $pc->channel->item,
+        'PS5' => $ps5->channel->item,
+        'wii' => $wii->channel->item,
+        'switch' => $switch->channel->item
+    ];
 }catch(Exception $e){
     echo $e->getMessage();
 }
