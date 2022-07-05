@@ -44,10 +44,9 @@
       </div>
     </div>
   </nav>
-  <div class="row foto">
-    <div class="col-12 ">
-      <h1 class="text-light text-center mt-5 p-5">Le Trésor des jeux vidéos</h1>
+  <div class="row foto m-0 p-0">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <h1 class="text-light text-center">Le Trésor des jeux vidéos</h1>
     </div>
   </div>
-
-  <div>
+  <div class="container mt-3">

@@ -17,6 +17,15 @@
 .foto {
     background: url("../img/photo_titre.png") no-repeat;
     height: 30rem;
+    width: 100%;
     background-size: cover;
     background-position: center;
+}
+@media screen and (max-width: 700px) {
+    .foto {
+        height: 9rem;  
+    }
+    .slides {
+        width: 100%;
+    }
 }
