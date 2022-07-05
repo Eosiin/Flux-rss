@@ -58,6 +58,126 @@ if (isset($rss)) {
     <?= "</div>"; ?>
 <?php } ?>
 
+<div class="row justify-content-evenly">
+    <!-- Début Card -->
+    <div class="card col-lg-3 col-12  border border-dark">
+        <img src="../assets/img/photo_titre.png" class="card-img-top" alt="photo_titre">
+        <div class="card-body ">
+            <div class="card-title text-center fw-bold fs-4">Flux</div>
+            <div class="d-flex justify-content-evenly">
+                <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Flux"><span>+ d'infos</span>
+            </div>
+        </div>
+    </div>
+<!-- Fin card -->
+
+    <!-- Début Modal  -->
+    <div class="modal fade" id="Flux" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border border-dark">
+                <div class="modal-header border border-dark">
+                    <h5 class="modal-title " id="FluxRSS">Nom de l'article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border border-dark">
+                    Résumé de l'article
+                </div>
+                <div class="modal-footer border border-dark">
+                    <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Fin Modal -->
+<!-- Début Card -->
+<div class="card col-lg-3 col-12 d-lg-block d-none border border-dark">
+        <img src="../assets/img/photo_titre.png" class="card-img-top" alt="photo_titre">
+        <div class="card-body ">
+            <div class="card-title text-center fw-bold fs-4">Flux</div>
+            <div class="d-flex justify-content-evenly">
+                <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Flux"><span>+ d'infos</span>
+            </div>
+        </div>
+    </div>
+<!-- Fin card -->
+
+    <!-- Début Modal  -->
+    <div class="modal fade" id="Flux" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border border-dark">
+                <div class="modal-header border border-dark">
+                    <h5 class="modal-title " id="FluxRSS">Nom de l'article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border border-dark">
+                    Résumé de l'article
+                </div>
+                <div class="modal-footer border border-dark">
+                    <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Début Card -->
+    <div class="card col-lg-3 col-12 border border-dark ">
+        <img src="../assets/img/photo_titre.png" class="card-img-top" alt="photo_titre">
+        <div class="card-body ">
+            <div class="card-title text-center fw-bold fs-4">Flux</div>
+            <div class="d-flex justify-content-evenly">
+                <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Flux"><span>+ d'infos</span>
+            </div>
+        </div>
+    </div>
+<!-- Fin card -->
+
+    <!-- Début Modal  -->
+    <div class="modal fade" id="Flux" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border border-dark">
+                <div class="modal-header border border-dark">
+                    <h5 class="modal-title " id="FluxRSS">Nom de l'article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border border-dark">
+                    Résumé de l'article
+                </div>
+                <div class="modal-footer border border-dark">
+                    <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 include("../inc/footer.php");
 ?>
