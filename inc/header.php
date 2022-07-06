@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="<?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "text-dark bg-light" : "text-light bg-dark" ?>">
-  <nav class="navbar navbar-expand-lg <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "navbar-light bg-light" : "navbar-dark bg-dark" ?>">
+<body class="<?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "text-dark bg-light" : "text-light bg-dark"?>">
+  <nav class="navbar navbar-expand-lg fixed-top <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "navbar-light bg-light" : "navbar-dark bg-dark" ?>">
 
     <div class="container-fluid">
       <a class="navbar-brand"><img src="../assets/img/coffre.png" class="logo"></a>
@@ -35,7 +35,7 @@
             <ul class="dropdown-menu <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? '' : "dropdown-menu-dark" ?>" aria-labelledby="navbarDropdown">
 
               <?php
-              if (isset($_SESSION['USER']) && empty($_COOKIE['myCheckbox'])) { ?>
+              if (isset($_SESSION['USER']) && isset($_COOKIE['myCheckbox0'])) { ?>
                 <li><a class="dropdown-item" href="page.php?rss=<?= $_COOKIE['myCheckbox0'] ?>"><?= $_COOKIE['myCheckbox0'] ?></a></li>
                 <li><a class="dropdown-item" href="page.php?rss=<?= $_COOKIE['myCheckbox1'] ?>"><?= $_COOKIE['myCheckbox1'] ?></a></li>
                 <li><a class="dropdown-item" href="page.php?rss=<?= $_COOKIE['myCheckbox2'] ?>"><?= $_COOKIE['myCheckbox2'] ?></a></li>
@@ -64,7 +64,7 @@
       </div>
     </div>
   </nav>
-  <div class="row foto m-0 p-0">
+  <div class="row foto m-0 p-0 mt-5">
     <div class="col-12 d-flex align-items-center justify-content-center">
       <h1 class="text-center  <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? '' : "text-white" ?>">Le Trésor des jeux vidéos</h1>
     </div>
