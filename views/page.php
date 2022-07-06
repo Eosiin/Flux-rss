@@ -17,7 +17,7 @@ if (isset($rss)) {
                 $count = 6;
             }
             for ($i = 0; $i < $count; $i++) { ?>
-                <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 border border-dark">
+                <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 border border-dark  <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"]=="on" ? "text-light" : "text-dark" ) ?>">
                     <img src="<?= $rss[$_GET['rss']][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
                     <div class="card-body ">
                         <div class="card-title text-center fw-bold fs-5"><?= $rss[$_GET['rss']][$i]->title ?></div>
@@ -32,7 +32,7 @@ if (isset($rss)) {
                 <!-- Début Modal  -->
                 <div class="modal fade" id="Modal1<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content border border-dark">
+                        <div class="modal-content border border-dark  <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"]=="on" ? "text-light" : "text-dark" ) ?>">
                             <div class="modal-header border border-dark">
                                 <h5 class="modal-title " id="FluxRSS"><?= $rss[$_GET['rss']][$i]->title ?></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
