@@ -16,7 +16,7 @@ if (isset($rss)) {
             } else {
                 $count = 6;
             }
-            for ($i = 0; $i <= $count; $i++) { ?>
+            for ($i = 0; $i < $count; $i++) { ?>
                 <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 border border-dark">
                     <img src="<?= $rss[$_GET['rss']][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
                     <div class="card-body ">
