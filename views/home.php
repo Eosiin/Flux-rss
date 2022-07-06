@@ -117,12 +117,15 @@ if (isset($rss)) {
     <?php
     if (isset($_SESSION['USER']) && !empty($_COOKIE['myCheckbox0'])) {
         if (isset($_COOKIE['myView']) && !empty($_COOKIE['myView'])) {
-            //    var_dump($_COOKIE['myView']);
+            // var_dump($_COOKIE['myView']);
+            $count = $_COOKIE['myView'] / 3;
+        } else {
+            $count = 6 / 3;
         }
+        var_dump($count);
         for ($a = 0; $a <= 2; $a++) {
-            for ($i = 1; $i < 4; $i++) { ?>
-                <!-- Début card -->
-                <div class="card col-lg-3 col-11 p-0 ms-1 p-1  border border-dark">
+            for ($i = 1; $i <= $count; $i++) { ?>
+                <div class="card col-lg-3 col-12 p-0 ms-1 p-1  border border-dark">
                     <img src="<?= $rss[$_COOKIE["myCheckbox$a"]][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
                     <div class="card-body <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"]=="on" ? "text-light" : "text-dark" ) ?>">
                         <div class=" card-title text-center fw-bold fs-5"><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->title ?></div>
