@@ -16,25 +16,25 @@ require_once '../controller/settings-controller.php';
                 <fieldset>
                     <legend>Type de recherche :</legend>
                     <div>
-                        <input class="myCheckbox" type="checkbox" id="PS5" name="myCheckbox[]" value="ps5" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'PS5' ? 'checked' : '') : '' ?>>
+                        <input class="myCheckbox" type="checkbox" id="PS5" name="myCheckbox[]" value="ps5" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'ps5' ? 'checked' : '') : '' ?>>
                         <label class="ms-2" for="PS5">PS5</label>
                     </div>
 
                     <div>
-                        <input class="myCheckbox" type="checkbox" id="Switch" name="myCheckbox[]" value="switch" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'Switch' ? 'checked' : '') : '' ?>>
+                        <input class="myCheckbox" type="checkbox" id="Switch" name="myCheckbox[]" value="switch" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'switch' ? 'checked' : '') : '' ?>>
                         <label class="ms-2" for="Switch">Switch</label>
                     </div>
 
                     <div>
-                        <input class="myCheckbox" type="checkbox" id="Wii" name="myCheckbox[]" value="wii" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'Wii' ? 'checked' : '') : '' ?>>
+                        <input class="myCheckbox" type="checkbox" id="Wii" name="myCheckbox[]" value="wii" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'wii' ? 'checked' : '') : '' ?>>
                         <label class="ms-2" for="Wii">Wii</label>
                     </div>
                     <div>
-                        <input class="myCheckbox" type="checkbox" id="PC" name="myCheckbox[]" value="pc" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'PC' ? 'checked' : '') : '' ?>>
+                        <input class="myCheckbox" type="checkbox" id="PC" name="myCheckbox[]" value="pc" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'pc' ? 'checked' : '') : '' ?>>
                         <label class="ms-2" for="PC">PC</label>
                     </div>
                     <div>
-                        <input class="myCheckbox" type="checkbox" id="Mobile" name="myCheckbox[]" value="mobile" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'Mobile' ? 'checked' : '') : '' ?>>
+                        <input class="myCheckbox" type="checkbox" id="Mobile" name="myCheckbox[]" value="mobile" <?= isset($_COOKIE['myCheckbox']) ? ($_COOKIE['myCheckbox'] == 'mobile' ? 'checked' : '') : '' ?>>
                         <label class="ms-2" for="Mobile">Mobile</label>
                     </div>
                 </fieldset>
