@@ -2,7 +2,7 @@
 session_start();
 require_once '../controller/home-controller.php';
 include("../inc/header.php");
-var_dump($_SESSION['USER']);
+// var_dump($_SESSION['USER']);
 ?>
 <?php
 if (isset($rss)) {
@@ -15,73 +15,75 @@ if (isset($rss)) {
         <div id="carouselExampleFade" class="carousel slides slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner ">
                 <?php if (isset($_SESSION['USER']) && !empty($_COOKIE['myCheckbox0'])) {
-                    // for ($a = 0; $a <= 2; $a++) { ?>
-                        <div class="carousel-item active d-flex flex-column">
-                            <a href="" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide1" class="text-center">
-                                <?php if (isset($rss[$_COOKIE["myCheckbox0"]][0]->enclosure['url']) && $rss[$_COOKIE["myCheckbox0"]][0]->enclosure['url'] != "") { ?>
-                                    <img class="slides-img" src="<?= $rss[$_COOKIE["myCheckbox0"]][0]->enclosure['url'] ?>" alt="" width="200">
-                                <?php } ?>
-                            </a>
-                             <span class="date text-center"><?= strftime($date_format, strtotime($rss[$_COOKIE["myCheckbox0"]][0]->children('dc', true)->date)) ?></span>
-                            <a href="<?= $rss[$_COOKIE["myCheckbox0"]][0]->link ?>" target=" _blank" class="text-center ">
-                                <span class="titre"><?= $rss[$_COOKIE["myCheckbox0"]][0]->title ?></span>
-                            </a>
-                        </div>
-                    <?php 
+                    // for ($a = 0; $a <= 2; $a++) { 
+                ?>
+                    <div class="carousel-item active d-flex flex-column">
+                        <a href="" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide1" class="text-center">
+                            <?php if (isset($rss[$_COOKIE["myCheckbox0"]][0]->enclosure['url']) && $rss[$_COOKIE["myCheckbox0"]][0]->enclosure['url'] != "") { ?>
+                                <img class="slides-img" src="<?= $rss[$_COOKIE["myCheckbox0"]][0]->enclosure['url'] ?>" alt="" width="200">
+                            <?php } ?>
+                        </a>
+                        <span class="date text-center"><?= strftime($date_format, strtotime($rss[$_COOKIE["myCheckbox0"]][0]->children('dc', true)->date)) ?></span>
+                        <a href="<?= $rss[$_COOKIE["myCheckbox0"]][0]->link ?>" target=" _blank" class="text-center ">
+                            <span class="titre"><?= $rss[$_COOKIE["myCheckbox0"]][0]->title ?></span>
+                        </a>
+                    </div>
+            </div>
+            <?php
                     // } 
-                    ?>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-            </div>
-  <?php } else { ?>
-            <div class="carousel-item active d-flex flex-column">
-                <a href="<?= $rss['mobile'][0]->link ?>" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide1" class="text-center">
-                    <?php if (isset($rss['mobile'][0]->enclosure['url']) && $rss['mobile'][0]->enclosure['url'] != "") { ?>
-                        <img class="slides-img" src="<?= $rss['mobile'][0]->enclosure['url'] ?>" alt="" width="200">
-                    <?php } ?>
-                </a>
-                <span class="date text-center"><?= strftime($date_format, strtotime($rss['mobile'][0]->children('dc', true)->date)) ?></span>
-                <a href="<?= $rss['mobile'][0]->link ?>" target=" _blank" class="text-center ">
-                    <span class="titre"><?= $rss['mobile'][0]->title ?></span>
-                </a>
-            </div>
-            <div class="carousel-item d-flex flex-column">
-                <a href="<?= $rss['wii'][0]->link ?>" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide2" class="text-center">
-                    <?php if (isset($rss['wii'][0]->enclosure['url']) && $rss['wii'][0]->enclosure['url'] != "") { ?>
-                        <img class="slides-img" src="<?= $rss['wii'][0]->enclosure['url'] ?>" alt="" width="200">
-                    <?php } ?>
-                </a>
-                <span class="date text-center"><?= strftime($date_format, strtotime($rss['wii'][0]->children('dc', true)->date)) ?></span>
-                <a href="<?= $rss['wii'][0]->link ?>" target=" _blank" class="text-center">
-                    <span class="titre"><?= $rss['wii'][0]->title ?></span>
-                </a>
-            </div>
-            <div class="carousel-item d-flex flex-column">
-                <a href="<?= $rss['pc'][0]->link ?>" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide3" class="text-center">
-                    <?php if (isset($rss['pc'][0]->enclosure['url']) && $rss['pc'][0]->enclosure['url'] != "") { ?>
-                        <img class="slides-img" src="<?= $rss['pc'][0]->enclosure['url'] ?>" alt="" width="200">
-                    <?php } ?>
-                </a>
-                <span class="date text-center"><?= strftime($date_format, strtotime($rss['pc'][0]->children('dc', true)->date)) ?></span>
-                <a href="<?= $rss['pc'][0]->link ?>" target=" _blank" class="text-center">
-                    <span class="titre"><?= $rss['pc'][0]->title ?></span>
-                </a>
-            </div>
+            ?>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    <?php } else { ?>
+        <div class="carousel-item active d-flex flex-column">
+            <a href="<?= $rss['mobile'][0]->link ?>" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide1" class="text-center">
+                <?php if (isset($rss['mobile'][0]->enclosure['url']) && $rss['mobile'][0]->enclosure['url'] != "") { ?>
+                    <img class="slides-img" src="<?= $rss['mobile'][0]->enclosure['url'] ?>" alt="" width="200">
+                <?php } ?>
+            </a>
+            <span class="date text-center"><?= strftime($date_format, strtotime($rss['mobile'][0]->children('dc', true)->date)) ?></span>
+            <a href="<?= $rss['mobile'][0]->link ?>" target=" _blank" class="text-center ">
+                <span class="titre"><?= $rss['mobile'][0]->title ?></span>
+            </a>
+        </div>
+        <div class="carousel-item d-flex flex-column">
+            <a href="<?= $rss['wii'][0]->link ?>" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide2" class="text-center">
+                <?php if (isset($rss['wii'][0]->enclosure['url']) && $rss['wii'][0]->enclosure['url'] != "") { ?>
+                    <img class="slides-img" src="<?= $rss['wii'][0]->enclosure['url'] ?>" alt="" width="200">
+                <?php } ?>
+            </a>
+            <span class="date text-center"><?= strftime($date_format, strtotime($rss['wii'][0]->children('dc', true)->date)) ?></span>
+            <a href="<?= $rss['wii'][0]->link ?>" target=" _blank" class="text-center">
+                <span class="titre"><?= $rss['wii'][0]->title ?></span>
+            </a>
+        </div>
+        <div class="carousel-item d-flex flex-column">
+            <a href="<?= $rss['pc'][0]->link ?>" target=" _blank" data-bs-toggle="modal" data-bs-target="#slide3" class="text-center">
+                <?php if (isset($rss['pc'][0]->enclosure['url']) && $rss['pc'][0]->enclosure['url'] != "") { ?>
+                    <img class="slides-img" src="<?= $rss['pc'][0]->enclosure['url'] ?>" alt="" width="200">
+                <?php } ?>
+            </a>
+            <span class="date text-center"><?= strftime($date_format, strtotime($rss['pc'][0]->children('dc', true)->date)) ?></span>
+            <a href="<?= $rss['pc'][0]->link ?>" target=" _blank" class="text-center">
+                <span class="titre"><?= $rss['pc'][0]->title ?></span>
+            </a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
     </div>
 <?php } ?>
 </div>
@@ -114,6 +116,9 @@ if (isset($rss)) {
 <div class="row justify-content-evenly">
     <?php
     if (isset($_SESSION['USER']) && !empty($_COOKIE['myCheckbox0'])) {
+        if (isset($_COOKIE['myView']) && !empty($_COOKIE['myView'])) {
+            //    var_dump($_COOKIE['myView']);
+        }
         for ($a = 0; $a <= 2; $a++) {
             for ($i = 1; $i < 4; $i++) { ?>
                 <div class="card col-lg-3 col-12 p-0 ms-1 p-1  border border-dark">
