@@ -27,6 +27,29 @@
           <li class="nav-item">
             <a class="nav-link text-light" href="settings.php">Paramètres</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <?php
+              if (isset($_SESSION['USER']) && empty($_COOKIE['myCheckbox'])) { ?>
+                <li><a class="dropdown-item" href="page.php?rss=<?= $_COOKIE['myCheckbox0'] ?>"><?= $_COOKIE['myCheckbox0'] ?></a></li>
+                <li><a class="dropdown-item" href="page.php?rss=<?= $_COOKIE['myCheckbox1'] ?>"><?= $_COOKIE['myCheckbox1'] ?></a></li>
+                <li><a class="dropdown-item" href="page.php?rss=<?= $_COOKIE['myCheckbox2'] ?>"><?= $_COOKIE['myCheckbox2'] ?></a></li>
+
+              <?php } else { ?>
+
+                <li><a class="dropdown-item" href="page.php?rss=mobile">Mobile</a></li>
+                <li><a class="dropdown-item" href="page.php?rss=wii">Wii</a></li>
+                <li><a class="dropdown-item" href="page.php?rss=pc">PC</a></li>
+
+              <?php }
+              ?>
+
+            </ul>
+          </li>
 
           <li class="nav-item">
             <?php if (!isset($_SESSION['USER'])) { ?>
