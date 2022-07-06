@@ -57,7 +57,23 @@ require_once '../controller/settings-controller.php';
                     </div>
                 </fieldset>
             </div>
-            
+            <div class="mt-2">
+                <fieldset>
+                    <legend>Choix du thème :</legend>
+
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="whiteTheme" name="whiteTheme" <?= isset($_COOKIE['whiteTheme']) ? 'checked' : '' ?>>
+                                <label class="form-check-label" for="whiteTheme">White Mode</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+
 
             <!-- bouton permettant de valider le formulaire -->
             <button class="btn btn-dark mt-3">Enregistrer</button>

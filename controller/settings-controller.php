@@ -1,4 +1,5 @@
 <?php
+
 // var_dump($_SESSION);
 var_dump($_POST);
 // redirection si l'utilisateur n'est pas loggé
@@ -19,14 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     setcookie("myView", $_POST['myView'], time() + 3600);
-
-    // nous controllons si la checkbox valentineTheme est coché
-    // if (isset($_POST['valentineTheme'])) {
-    //     setcookie("valentineTheme", $_POST['valentineTheme'], time() + 3600);
-    // } else {
-    //     setcookie("valentineTheme", '', time() - 3600);
-    // }
-
+    if (isset($_POST['whiteTheme'])) {
+        setcookie("whiteTheme", $_POST['whiteTheme'], time() + 3600);
+    } else {
+        setcookie("whiteTheme", '', time() - 3600);
+    }
     // refresh de la page à l'aide d'un header location
-    // header('Location: ../views/settings.php');
+    header('Location: ../views/settings.php');
+    // nous controllons si la checkbox valentineTheme est coché
+
 }
