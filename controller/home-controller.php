@@ -11,7 +11,7 @@ try{
     $rss = [
         'mobile' => $mobile->channel->item,
         'pc'=> $pc->channel->item,
-        'PS5' => $ps5->channel->item,
+        'ps5' => $ps5->channel->item,
         'wii' => $wii->channel->item,
         'switch' => $switch->channel->item
     ];
