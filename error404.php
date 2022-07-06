@@ -61,20 +61,17 @@
 
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+               
             </div>
         </div>
     </nav>
 
-    <h1 class="text-center">ERREUR 404 NOT FOUND</h1>
+    <h1 class="text-center">ERROR 404 NOT FOUND</h1>
     <div class="row justify-content-center m-0 p-0">
         <div class="col-8">
             <img src="../assets/img/GameOver.png">
         </div>
     </div>
     <?php
-    include("../inc/footer.php");
+    include("inc/footer.php");
     ?>
