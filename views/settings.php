@@ -8,7 +8,7 @@ require_once '../controller/settings-controller.php';
 ?>
 <?php include '../inc/header.php' ?>
 <div class="row justify-content-center m-0 p-0">
-    <div class="col-8 border border-dark shadow p-4 m-4 text-center">
+    <div class="col-8 <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "border border-dark"  : "border border-light" ?> shadow p-4 m-4 text-center">
         <p class="h1">Settings</p>
         <!-- mise en place d'un formulaire pour récuperer les données -->
         <form action="" method="POST">

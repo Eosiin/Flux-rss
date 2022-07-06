@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body>
+<body class="<?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "text-dark bg-light" : "text-light bg-dark"?>">
   <nav class="navbar navbar-expand-lg <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? "navbar-light bg-light" : "navbar-dark bg-dark" ?>">
 
     <div class="container-fluid">
