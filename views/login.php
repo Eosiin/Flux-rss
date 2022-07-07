@@ -9,8 +9,8 @@ require_once "../controller/login-controller.php";
 <body class="d-flex flex-column min-vh-100 log">
     <!-- Formulaire de connexion -->
     <form action="" method="POST">
-        <h1 class="text-center bg-light p-3 my-5">Connexion au site</h1>
-        <div class="row justify-content-center pt-2">
+        <h1 class="text-center bg-light p-3 my-5 text-dark">Connexion au site</h1>
+        <div class="row justify-content-center pt-2 text-dark">
             <div class="col-lg-3 col-10 bg-light border border-secondary rounded shadow p-4">
 
                 <div class="my-2">

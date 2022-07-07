@@ -32,7 +32,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Pages
             </a>
-            <ul class="dropdown-menu <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? '' : "dropdown-menu-dark"?>" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? '' : "dropdown-menu-dark" ?>" aria-labelledby="navbarDropdown">
 
               <?php
               if (isset($_SESSION['USER']) && isset($_COOKIE['myCheckbox0'])) { ?>
@@ -61,16 +61,12 @@
 
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
   <div class="row foto m-0 p-0 mt-5">
     <div class="col-12 d-flex align-items-center justify-content-center">
-      <h1 class= "text-center  <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? '' : "text-white" ?>">Le Trésor des jeux vidéos</h1>
+      <h1 class="text-center  <?= (isset($_SESSION['USER']) && isset($_COOKIE["whiteTheme"]) && $_COOKIE["whiteTheme"] == "on") ? '' : "text-white" ?>">Le Trésor des jeux vidéos</h1>
     </div>
   </div>
   <div class="container mt-3">

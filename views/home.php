@@ -14,7 +14,7 @@ if (isset($rss)) {
     <div class="d-flex justify-content-center">
         <div id="carouselExampleFade" class="carousel slides slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner ">
-                <?php if (isset($_SESSION['USER']) && !empty($_COOKIE['myCheckbox0'])) {
+                <?php if (isset($_SESSION['USER']) && isset($_COOKIE['myCheckbox0'])) {
                     // for ($a = 0; $a <= 2; $a++) { 
                 ?>
                     <div class="carousel-item active d-flex flex-column">
@@ -115,153 +115,153 @@ if (isset($rss)) {
 <?php } ?>
 <div class="row justify-content-evenly">
     <?php
-    if (isset($_SESSION['USER']) && !empty($_COOKIE['myCheckbox0'])) {
+    if (isset($_SESSION['USER']) && isset($_COOKIE['myCheckbox0'])) {
         if (isset($_COOKIE['myView']) && !empty($_COOKIE['myView'])) {
             // var_dump($_COOKIE['myView']);
             $count = $_COOKIE['myView'] / 3;
         } else {
             $count = 6 / 3;
         }
-        var_dump($count);
+
         for ($a = 0; $a <= 2; $a++) {
             for ($i = 1; $i <= $count; $i++) { ?>
-                <div class="card col-lg-3 col-12 p-0 ms-1 p-1  border border-dark">
+                <div class="card col-lg-3 col-11 p-0 ms-1 p-1  border border-dark">
                     <img src="<?= $rss[$_COOKIE["myCheckbox$a"]][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
-                    <div class="card-body <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"]=="on" ? "text-light" : "text-dark" ) ?>">
+                    <div class="card-body <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"] == "on" ? "text-light" : "text-dark") ?>">
                         <div class=" card-title text-center fw-bold fs-5"><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->title ?></div>
-                    <p><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->description ?></p>
+                        <p><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->description ?></p>
+                        <div class="d-flex justify-content-evenly">
+                            <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                            <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal<?= $a.$i ?>"><span>+ d'infos</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin card -->
+                <!-- Début Modal  -->
+                <div class="modal fade" id="Modal<?= $a.$i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content border border-dark  <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"] == "on" ? "text-light" : "text-dark") ?>">
+                            <div class="modal-header border border-dark">
+                                <h5 class="modal-title " id="FluxRSS"><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->title ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center border border-dark">
+                                <a href="<?= $rss[$_COOKIE["myCheckbox$a"]][$i]->link ?>" class="text-dark">Vers la page</a>
+                            </div>
+                            <div class="modal-footer border border-dark">
+                                <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Modal -->
+            <?php }
+        }
+    } else {
+        for ($i = 1; $i < 4; $i++) {
+            ?>
+            <!-- Début Card -->
+            <div class="card col-lg-3 col-11 p-0 ms-1 p-1 text-dark border border-dark">
+                <img src="<?= $rss['mobile'][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
+                <div class="card-body ">
+                    <div class="card-title text-center fw-bold fs-5"><?= $rss['mobile'][$i]->title ?></div>
+                    <p><?= $rss['mobile'][$i]->description ?></p>
                     <div class="d-flex justify-content-evenly">
                         <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
                         <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal1<?= $i ?>"><span>+ d'infos</span>
                     </div>
                 </div>
-</div>
-<!-- Fin card -->
-<!-- Début Modal  -->
-<div class="modal fade" id="Modal1<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content border border-dark">
-            <div class="modal-header border border-dark">
-                <h5 class="modal-title " id="FluxRSS"><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->title ?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center border border-dark">
-                <a href="<?= $rss[$_COOKIE["myCheckbox$a"]][$i]->link ?>" class="text-dark">Vers la page</a>
-            </div>
-            <div class="modal-footer border border-dark">
-                <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+            <!-- Fin card -->
+            <!-- Début Modal  -->
+            <div class="modal fade" id="Modal1<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content border border-dark">
+                        <div class="modal-header border border-dark">
+                            <h5 class="modal-title text-dark" id="FluxRSS"><?= $rss['mobile'][$i]->title ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center border border-dark">
+                            <a href="<?= $rss['mobile'][$i]->link ?>" class="text-dark">Vers la page</a>
+                        </div>
+                        <div class="modal-footer border border-dark">
+                            <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
 
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Fin Modal -->
-<?php }
-        }
-    } else {
-        for ($i = 1; $i < 4; $i++) {
-?>
-<!-- Début Card -->
-<div class="card col-lg-3 col-11 p-0 ms-1 p-1  border border-dark">
-    <img src="<?= $rss['mobile'][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
-    <div class="card-body ">
-        <div class="card-title text-center fw-bold fs-5"><?= $rss['mobile'][$i]->title ?></div>
-        <p><?= $rss['mobile'][$i]->description ?></p>
-        <div class="d-flex justify-content-evenly">
-            <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
-            <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal1<?= $i ?>"><span>+ d'infos</span>
-        </div>
-    </div>
-</div>
-<!-- Fin card -->
-<!-- Début Modal  -->
-<div class="modal fade" id="Modal1<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content border border-dark">
-            <div class="modal-header border border-dark">
-                <h5 class="modal-title " id="FluxRSS"><?= $rss['mobile'][$i]->title ?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Fin Modal -->
+        <?php } ?>
+        <?php for ($i = 1; $i < 4; $i++) { ?>
+            <!-- Début Card -->
+            <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 text-dark border border-dark">
+                <img src="<?= $rss['pc'][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
+                <div class="card-body ">
+                    <div class="card-title text-center fw-bold fs-5"><?= $rss['pc'][$i]->title ?></div>
+                    <p><?= $rss['pc'][$i]->description ?></p>
+                    <div class="d-flex justify-content-evenly">
+                        <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                        <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal2<?= $i ?>"><span>+ d'infos</span>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body text-center border border-dark">
-                <a href="<?= $rss['mobile'][$i]->link ?>" class="text-dark">Vers la page</a>
-            </div>
-            <div class="modal-footer border border-dark">
-                <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+            <!-- Fin card -->
+            <!-- Début Modal  -->
+            <div class="modal fade" id="Modal2<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content border border-dark">
+                        <div class="modal-header border border-dark">
+                            <h5 class="modal-title text-dark" id="FluxRSS"><?= $rss['pc'][$i]->title ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body border border-dark text-center">
+                            <a href="<?= $rss['pc'][$i]->link ?>" class="text-dark">Vers la page</a>
+                        </div>
+                        <div class="modal-footer border border-dark">
+                            <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
 
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Fin Modal -->
-<?php } ?>
-<?php for ($i = 1; $i < 4; $i++) { ?>
-    <!-- Début Card -->
-    <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 border border-dark">
-        <img src="<?= $rss['pc'][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
-        <div class="card-body ">
-            <div class="card-title text-center fw-bold fs-5"><?= $rss['pc'][$i]->title ?></div>
-            <p><?= $rss['pc'][$i]->description ?></p>
-            <div class="d-flex justify-content-evenly">
-                <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
-                <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal2<?= $i ?>"><span>+ d'infos</span>
-            </div>
-        </div>
-    </div>
-    <!-- Fin card -->
-    <!-- Début Modal  -->
-    <div class="modal fade" id="Modal2<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content border border-dark">
-                <div class="modal-header border border-dark">
-                    <h5 class="modal-title " id="FluxRSS"><?= $rss['pc'][$i]->title ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body border border-dark text-center">
-                    <a href="<?= $rss['pc'][$i]->link ?>" class="text-dark">Vers la page</a>
+            </div>
+            <!-- Fin Modal -->
+        <?php } ?>
+        <?php for ($i = 1; $i < 4; $i++) { ?>
+            <!-- Début Card -->
+            <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 text-dark border border-dark">
+                <img src="<?= $rss['wii'][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
+                <div class="card-body ">
+                    <div class="card-title text-center fw-bold fs-5"><?= $rss['wii'][$i]->title ?></div>
+                    <p><?= $rss['wii'][$i]->description ?></p>
+                    <div class="d-flex justify-content-evenly">
+                        <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                        <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal3<?= $i ?>"><span>+ d'infos</span>
+                    </div>
                 </div>
-                <div class="modal-footer border border-dark">
-                    <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
+            </div>
+            <!-- Fin card -->
+            <!-- Début Modal  -->
+            <div class="modal fade" id="Modal3<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content border border-dark">
+                        <div class="modal-header border border-dark">
+                            <h5 class="modal-title text-dark" id="FluxRSS"><?= $rss['wii'][$i]->title ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body border border-dark text-center">
+                            <a href="<?= $rss['wii'][$i]->link ?>" class="text-dark">Vers la page</a>
+                        </div>
+                        <div class="modal-footer border border-dark">
+                            <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
 
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Fin Modal -->
-<?php } ?>
-<?php for ($i = 1; $i < 4; $i++) { ?>
-    <!-- Début Card -->
-    <div class="card col-lg-3 col-11 p-0 ms-1 p-1 mt-3 border border-dark">
-        <img src="<?= $rss['wii'][$i]->enclosure['url'] ?>" class="card-img-top" alt="photo_titre">
-        <div class="card-body ">
-            <div class="card-title text-center fw-bold fs-5"><?= $rss['wii'][$i]->title ?></div>
-            <p><?= $rss['wii'][$i]->description ?></p>
-            <div class="d-flex justify-content-evenly">
-                <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
-                <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal3<?= $i ?>"><span>+ d'infos</span>
-            </div>
-        </div>
-    </div>
-    <!-- Fin card -->
-    <!-- Début Modal  -->
-    <div class="modal fade" id="Modal3<?= $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content border border-dark">
-                <div class="modal-header border border-dark">
-                    <h5 class="modal-title " id="FluxRSS"><?= $rss['wii'][$i]->title ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body border border-dark text-center">
-                    <a href="<?= $rss['wii'][$i]->link ?>" class="text-dark">Vers la page</a>
-                </div>
-                <div class="modal-footer border border-dark">
-                    <button type="button" class="btn text-light btn-dark" data-bs-dismiss="modal">Revenir à la page précédente</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fin Modal -->
-<?php }
+            <!-- Fin Modal -->
+    <?php }
     } ?>
 
 

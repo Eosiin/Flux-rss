@@ -1,7 +1,7 @@
 <?php
 
 // var_dump($_SESSION);
-var_dump($_POST);
+// var_dump($_POST);
 // redirection si l'utilisateur n'est pas loggé
 if (!isset($_SESSION['USER'])) {
     header('Location: ../views/login.php');
