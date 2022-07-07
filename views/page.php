@@ -23,7 +23,7 @@ if (isset($rss)) {
                         <div class="card-title text-center fw-bold fs-5"><?= $rss[$_GET['rss']][$i]->title ?></div>
                         <p><?= $rss[$_GET['rss']][$i]->description ?></p>
                         <div class="d-flex justify-content-evenly">
-                            <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+                            
                             <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal1<?= $i ?>"><span>+ d'infos</span>
                         </div>
                     </div>

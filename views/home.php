@@ -131,14 +131,14 @@ if (isset($rss)) {
                         <div class=" card-title text-center fw-bold fs-5"><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->title ?></div>
                         <p><?= $rss[$_COOKIE["myCheckbox$a"]][$i]->description ?></p>
                         <div class="d-flex justify-content-evenly">
-                            <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
-                            <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal<?= $a.$i ?>"><span>+ d'infos</span>
+
+                            <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal<?= $a . $i ?>"><span>+ d'infos</span>
                         </div>
                     </div>
                 </div>
                 <!-- Fin card -->
                 <!-- Début Modal  -->
-                <div class="modal fade" id="Modal<?= $a.$i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
+                <div class="modal fade" id="Modal<?= $a . $i ?>" tabindex="-1" aria-labelledby="FluxRSS" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content border border-dark  <?= (isset($_SESSION['USER']) && isset($_COOKIE[" whiteTheme"]) && $_COOKIE["whiteTheme"] == "on" ? "text-light" : "text-dark") ?>">
                             <div class="modal-header border border-dark">
@@ -168,7 +168,7 @@ if (isset($rss)) {
                     <div class="card-title text-center fw-bold fs-5"><?= $rss['mobile'][$i]->title ?></div>
                     <p><?= $rss['mobile'][$i]->description ?></p>
                     <div class="d-flex justify-content-evenly">
-                        <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+
                         <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal1<?= $i ?>"><span>+ d'infos</span>
                     </div>
                 </div>
@@ -202,7 +202,7 @@ if (isset($rss)) {
                     <div class="card-title text-center fw-bold fs-5"><?= $rss['pc'][$i]->title ?></div>
                     <p><?= $rss['pc'][$i]->description ?></p>
                     <div class="d-flex justify-content-evenly">
-                        <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+
                         <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal2<?= $i ?>"><span>+ d'infos</span>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ if (isset($rss)) {
                     <div class="card-title text-center fw-bold fs-5"><?= $rss['wii'][$i]->title ?></div>
                     <p><?= $rss['wii'][$i]->description ?></p>
                     <div class="d-flex justify-content-evenly">
-                        <a type="button" class="btn text-dark border border-dark"> Réagir à l'article</a>
+
                         <button href="#" class="btn text-dark fs-6 border border-dark" data-bs-toggle="modal" data-bs-target="#Modal3<?= $i ?>"><span>+ d'infos</span>
                     </div>
                 </div>
